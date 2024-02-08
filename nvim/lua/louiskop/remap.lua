@@ -29,7 +29,13 @@ vim.keymap.set('x', '<C-_>', function()
     local esc = vim.api.nvim_replace_termcodes(
         '<ESC>', true, false, true
     )
+    
     vim.api.nvim_feedkeys(esc, 'nx', false)
+
     require ('Comment.api').locked('toggle.linewise')(vim.fn.visualmode())
     vim.api.nvim_feedkeys('gv', 'n', false)
 end)
+
+-- insert a line above and below cursor (padded line)
+vim.keymap.set("n", "U", "O<ESC>o");
+
