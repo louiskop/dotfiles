@@ -54,8 +54,28 @@ return require('packer').startup(function(use)
 use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup();
+        require('Comment').setup({
+            toggler={
+                line='<C-_>'
+            }
+        });
     end
 }
+
+
+-- setup latex plugins
+use { 'lervag/vimtex' }
+
+-- surround 
+use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
+
 
 end)

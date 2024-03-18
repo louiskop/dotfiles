@@ -39,3 +39,5 @@ end)
 -- insert a line above and below cursor (padded line)
 vim.keymap.set("n", "U", "O<ESC>o");
 
+-- add some more space to the end of the file
+vim.keymap.set("n", "<leader>m", "G10o<ESC><C-o>");
